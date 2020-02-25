@@ -8,6 +8,7 @@ authors = ["zkan <kan@prontomarketing.com>"]
 python = "^3.7"
 dagster = "^0.7.1"
 dagit = "^0.7.1"
+pytest = "^5.3.5"
 
 [tool.poetry.dev-dependencies]
 
