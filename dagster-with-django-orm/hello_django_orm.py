@@ -9,7 +9,7 @@ from dagster import execute_pipeline, pipeline, solid
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), 'demo')
 sys.path.append(PROJECT_ROOT)
 
-# Set up the Django enviroment
+# Set up the Django environment
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo.settings')
 django.setup()
 
