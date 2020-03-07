@@ -19,8 +19,10 @@ from customers.models import Customer
 
 @solid
 def hello_django_orm(context):
-    message = f'Found {Customer.objects.count()} customers!'
+    number_of_customers = Customer.objects.count()
+    message = f'Found {number_of_customers} customers!'
     context.log.info(message)
+    return number_of_customers
 
 
 @pipeline
