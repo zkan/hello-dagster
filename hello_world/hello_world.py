@@ -1,4 +1,8 @@
-from dagster import pipeline, solid
+from dagster import (
+    execute_pipeline,
+    pipeline,
+    solid,
+)
 
 
 @solid
@@ -14,3 +18,7 @@ def hello(context, name: str):
 @pipeline
 def hello_pipeline():
     hello(get_name())
+
+
+if __name__ == "__main__":
+    result = execute_pipeline(hello_pipeline)
