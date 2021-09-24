@@ -33,3 +33,9 @@ Then run
 ```sh
 python hello_world.py
 ```
+
+### Using Dagster CLI
+
+```sh
+dagster pipeline execute -f hello_world.py
+```
