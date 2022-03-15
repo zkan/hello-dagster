@@ -1,24 +1,20 @@
-from dagster import (
-    execute_pipeline,
-    pipeline,
-    solid,
-)
+from dagster import job, op
 
 
-@solid
+@op
 def get_name():
     return "Kan"
 
 
-@solid
+@op
 def hey(context, name: str):
     context.log.info(f"Hey, {name}!")
 
 
-@pipeline
-def hey_pipeline():
+@job
+def hey_job():
     hey(get_name())
 
 
 if __name__ == "__main__":
-    result = execute_pipeline(hey_pipeline)
+    result = hey_job.execute_in_process()
